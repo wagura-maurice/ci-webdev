@@ -61,10 +61,8 @@ class Backend extends CI_Controller {
     }
 
     public function delete($delete_id) {
-        // $this->data['delete_data_image']= $this->backend->delete_data_image($delete_id);
-        $this->data['delete_data']= $this->backend->delete_data($delete_id);
-        $this->load->view('backend/', $this->data, FALSE);
-        $this->view();
+        $this->backend->delete_data($delete_id);
+        redirect('backend/view');
     }
 
     public function deleteimage() {
